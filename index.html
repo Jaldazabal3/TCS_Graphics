@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="vendor/css/bootstrap.min.css"/>
+        
+        <script src="vendor/js/jquery-3.4.1.min.js"></script>
+        <script src="vendor/js/bootstrap.min.js"></script>
+
+
+
+
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+        <!-- Leaflet + mapbox CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+        
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" 
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+        
+        <!-- TopoJSON JS (I think it's not needed) -->
+        <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+
+        <!-- Own CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <a href="https://www.tobaccocontrolscale.org/" id="linkTCS">
+                    <div id="logo">
+                        <img src="img/tcs_logo1.png" alt="TCS_LOGO">
+                    </div>
+                </a>
+                <div id="siteTitle">
+                    <h1>
+                        Graphics
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div id="divGraph">
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- Own javascript code -->
+        <script src="js/model/DataAccess.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
