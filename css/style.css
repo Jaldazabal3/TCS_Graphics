@@ -22,3 +22,27 @@
     color: black;
     text-decoration: none;
 }
+#siteTitle h1 {
+    color: #19477e;
+}
+#dashboard {
+    margin-top: 20px;
+}
+#graphicTypes {
+    width: 60%;
+}
+#graphicTypes button{
+    border-color: #19477e;
+}
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+#graphContainer {
+    margin-top: 50px;
+}
+#divGraph {
+    height: 600px;
+    width: 700px;
+    margin: auto;
+}
