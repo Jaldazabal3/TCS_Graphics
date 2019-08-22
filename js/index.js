@@ -1,6 +1,5 @@
 $(function () {
     var tcsJSON = DataAccess.init();
-
     //When one button of the first button group is clicked, we do the following steps, only if we are changing the graphic type
     $('.graphicType').click(function() {
         if (!$(this).hasClass('active')) {
@@ -21,8 +20,14 @@ $(function () {
         }
     });
 
-    $('#secondCol').on('change','#mapYear', function (){
-        console.log($(this).children('option:selected').val());
+    $('#secondCol').on('change','#mapYear', function () {
+        var graphTypeSelected = $('.graphicType.active').attr('id');
+        // We draw the default graphic for each section
+        tcsJSON.then(data => {
+            Graphic.chooseGraphicToDraw(data, {
+                "type":graphTypeSelected
+            });
+        });
     });
     
 });
