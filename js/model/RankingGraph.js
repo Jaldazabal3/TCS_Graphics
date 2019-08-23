@@ -8,8 +8,8 @@ var RankingGraph = (function () {
         }
     }
 
+    // Creates an horizontal bar chart of the score selected, ordered by ranking
     function createRanking(geoJSONdata, graphicOptions) {
-        // console.log(geoJSONdata);
         // Creating array of countries
         var arrayTCScores = [];
         geoJSONdata.features.filter(feature => {
@@ -31,7 +31,6 @@ var RankingGraph = (function () {
         arrayTCScores.sort((first, second) => (parseInt(first.rank) > parseInt(second.rank)) ? 1 : ((parseInt(first.rank) < parseInt(second.rank)) ? -1 : 0));
         var arrayDataChart = arrayTCScores.map(a => parseInt(a[graphicOptions.component]));
         arrayDataChart.unshift(graphicOptions.component);
-        console.log(arrayDataChart);
         var chart = c3.generate({
             bindto: '#divGraph',
             data: {

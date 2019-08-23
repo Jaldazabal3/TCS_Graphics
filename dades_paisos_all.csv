@@ -11,7 +11,6 @@ Year;Country;Ranking;Price (30);Public place bans (22);Public info campaign spen
 2010;Belgium;10;17;13;2;8;4;6;50
 2013;Belgium;13;14;13;2;8;4;6;47
 2016;Belgium;16;14;15;1;8;5;6;49
-2003;Bulgaria;;;;;;;;
 2005;Bulgaria;16;19;6;0;9;6;6;46
 2007;Bulgaria;13;22;8;0;12;6;6;54
 2010;Bulgaria;24;21;6;0;10;1;2;40
@@ -139,7 +138,6 @@ Year;Country;Ranking;Price (30);Public place bans (22);Public info campaign spen
 2010;Portugal;19;18;11;0;8;1;5;43
 2013;Portugal;24;14;11;0;8;1;7;41
 2016;Portugal;19;14;11;1;10;5;6;47
-2003;Romania;;;;;;;;
 2005;Romania;29;13;6;0;0;3;5;27
 2007;Romania;14;18;8;1;12;6;5;50
 2010;Romania;16;21;7;0;7;3;7;45
@@ -152,7 +150,7 @@ Year;Country;Ranking;Price (30);Public place bans (22);Public info campaign spen
 2005;Slovakia;14;18;8;0;11;6;6;49
 2007;Slovakia;17;17;8;0;11;6;6;48
 2010;Slovakia;22;15;10;0;9;1;6;41
-2013;Slovakia;27;13;10;0;9;1;6;34
+2013;Slovakia;27;13;10;0;9;1;6;39
 2016;Slovakia;30;11;10;0;9;5;6;41
 2003;Slovenia;12;12;15;0;9;6;5;47
 2005;Slovenia;22;13;6;0;7;6;4;36
