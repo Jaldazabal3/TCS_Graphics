@@ -42,21 +42,18 @@ var MapGraph = (function() {
             var divContent = '<h4>TCS Score</h4>';
             if (props) {
                 var currentTCS = props.tcs.filter(d => d.Year === yearTCS);
-                if (currentTCS[0]!==undefined) {
+                if (currentTCS[0] !== undefined) {
+                    const arrayComponents = ['Total (100)', 'Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'];
                     divContent += '<b>' + props.name + '</b><br/>';
-                    divContent += 'Total (100): ' + currentTCS[0]['Total (100)'] + '<br/>';
-                    divContent += 'Price (30): ' + currentTCS[0]['Price (30)'] + '<br/>';
-                    divContent += 'Public place bans (22): ' + currentTCS[0]['Public place bans (22)'] + '<br/>';
-                    divContent += 'Public info campaign spending (15): ' + currentTCS[0]['Public info campaign spending (15)'] + '<br/>';
-                    divContent += 'Advertising bans (13): ' + currentTCS[0]['Advertising bans (13)'] + '<br/>';
-                    divContent += 'Health warnings (10): ' + currentTCS[0]['Health warnings (10)'] + '<br/>';
-                    divContent += 'Treatment (10): ' + currentTCS[0]['Treatment (10)'] + '<br/>';
+                    arrayComponents.forEach(component => {
+                        divContent += '<span class="score-name">' + component + ': </span><span class="score-value">' + currentTCS[0][component] + '</span><br/>';
+                    });
                 } else {
                     divContent += '<b>' + props.name + '</b><br />';
                     divContent += 'No TCS data';
                 }
             } else {
-                divContent += 'Hover on a country';
+                divContent += 'Hover over a country';
             }
             this._div.innerHTML = divContent;
         }

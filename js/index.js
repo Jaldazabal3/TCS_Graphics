@@ -20,7 +20,8 @@ $(function () {
         }
     });
 
-    $('#secondCol').on('change','#mapYear', function () {
+    // Draw graphic if there is a change on the second row map year select
+    $('#secondCol').on('change','#dataYear', function () {
         var graphTypeSelected = $('.graphicType.active').attr('id');
         // We draw the default graphic for each section
         tcsJSON.then(data => {
@@ -29,6 +30,8 @@ $(function () {
             });
         });
     });
+
+
     
 });
 
