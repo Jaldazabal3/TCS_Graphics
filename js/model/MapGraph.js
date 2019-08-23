@@ -140,10 +140,6 @@ var MapGraph = (function() {
         });
     }
 
-
-
-
-
     return {
         generateMap: generateMap
     }
