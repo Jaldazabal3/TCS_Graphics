@@ -1,12 +1,13 @@
 var Graphic = (function () {
-    var activeGraphic;
 
     function chooseGraphicToDraw(geoJSONdata, graphicOptions) {
         // We destroy the existing graphic if any because it gives problems between c3 and leaflet
-        if (activeGraphic !== undefined) {
-            activeGraphic.destroy();
-        }
+        // if (activeGraphic !== undefined && activeGraphic !== null) {
+        //     console.log(activeGraphic);
+        //     activeGraphic.destroy();
+        // }
         $('#divGraph').empty();
+        $('#divGraph').removeClass('c3');
         switch (graphicOptions.type) {
             case 'mapGraphic':
                 graphicOptions.year = $('#dataYear').children('option:selected').val();
@@ -22,7 +23,7 @@ var Graphic = (function () {
                     graphicOptions.breakDownScores = document.getElementById('breakDownCheck').checked;
                     $('#breakDownCheck').prop('disabled',false);
                 }
-                activeGraphic = RankingGraph.generateGraph(geoJSONdata, graphicOptions);
+                RankingGraph.generateGraph(geoJSONdata, graphicOptions);
             default:
                 break;
         }
