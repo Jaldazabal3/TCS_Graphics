@@ -8,6 +8,7 @@ var Controls = (function () {
                 rankingGraphicControls();
                 break;
             case 'evoGraphic':
+                evoGrapghicControls();
                 break;
             default:
                 break;
@@ -24,28 +25,55 @@ var Controls = (function () {
         $('#thirdCol').html(scoreTypesAndBreakDown());
     }
 
+    function evoGrapghicControls() {
+        $('#secondCol').html(chooseTypeEvo());
+    }
+
     function chooseYearSelect() {
         const arrayYears = [2016, 2013, 2010, 2007, 2005, 2003]
-        var $htmlSecondRow = '<div class="form-group"><label>Year</label><select class="form-control" id="dataYear">';
+        var $htmlSecondCol = '<div class="form-group"><label>Year</label><select class="form-control" id="dataYear">';
         arrayYears.forEach( year => {
-            $htmlSecondRow += '<option value="' + year + '">' + year + '</option>';
+            $htmlSecondCol += '<option value="' + year + '">' + year + '</option>';
         });
-        $htmlSecondRow += '</select></div>';
-        return $htmlSecondRow;
+        $htmlSecondCol += '</select></div>';
+        return $htmlSecondCol;
     }
 
     function scoreTypesAndBreakDown() {
         const arrayComponents = ['Total (100)','Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'];
-        var $htmlThirdRow = '<div class="form-group"><label>Component</label><select class="form-control" id="rankComponent">';
+        var $htmlThirdCol = '<div class="form-group"><label>Component</label><select class="form-control" id="rankComponent">';
         arrayComponents.forEach( component => {
-            $htmlThirdRow += '<option value="' + component + '">' + component + '</option>';
+            $htmlThirdCol += '<option value="' + component + '">' + component + '</option>';
         });
-        $htmlThirdRow += '</select></div>';
-        $htmlThirdRow += '<div class="form-check">';
-        $htmlThirdRow += '<input class="form-check-input" type="checkbox" value="breakdown" id="breakDownCheck"/>';
-        $htmlThirdRow += '<label class="form-check-label" for="breakDownCheck">Break down score</label>';
-        $htmlThirdRow += '</div>';
-        return $htmlThirdRow;
+        $htmlThirdCol += '</select></div>';
+        $htmlThirdCol += '<div class="form-check">';
+        $htmlThirdCol += '<input class="form-check-input" type="checkbox" value="breakdown" id="breakDownCheck"/>';
+        $htmlThirdCol += '<label class="form-check-label" for="breakDownCheck">Break down score</label>';
+        $htmlThirdCol += '</div>';
+        return $htmlThirdCol;
+    }
+
+    function chooseTypeEvo() {
+        const arrayComponents = [
+            'Ranking',
+            'Total (100)',
+            'Price (30)',
+            'Public place bans (22)',
+            'Public info campaign spending (15)',
+            'Advertising bans (13)',
+            'Health warnings (10)',
+            'Treatment (10)'
+        ];
+        var $htmlSecondCol = '<div class="form-group"><label>Type</label><select class="form-control" id="typeEvolution">';
+        arrayComponents.forEach(component => {
+            $htmlSecondCol += '<option value="' + component + '">' + component + '</option>';
+        });
+        $htmlSecondCol += '</select></div>';
+        return $htmlSecondCol;
+    }
+
+    function chooseCountries() {
+        var $htmlThirdCol
     }
 
     return {

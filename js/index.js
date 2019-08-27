@@ -1,5 +1,6 @@
 $(function () {
     var tcsJSON = DataAccess.init();
+
     //When one button of the first button group is clicked, we do the following steps, only if we are changing the graphic type
     $('.graphicType').click(function() {
         if (!$(this).hasClass('active')) {
@@ -14,7 +15,7 @@ $(function () {
             // We draw the default graphic for each section
             tcsJSON.then(data => {
                 Graphic.chooseGraphicToDraw(data, {
-                    "type":graphTypeSelected
+                    "type": graphTypeSelected
                 });
             });
         }
@@ -26,7 +27,7 @@ $(function () {
         // We draw the default graphic for each section
         tcsJSON.then(data => {
             Graphic.chooseGraphicToDraw(data, {
-                "type":graphTypeSelected
+                "type": graphTypeSelected
             });
         });
     });
@@ -37,7 +38,18 @@ $(function () {
         // We draw the default graphic for each section
         tcsJSON.then(data => {
             Graphic.chooseGraphicToDraw(data, {
-                "type":graphTypeSelected
+                "type": graphTypeSelected
+            });
+        });
+    });
+
+    // Draw graphic if the checkbox for breaking down the score is checked or unchecked
+    $('#thirdCol').on('change','#breakDownCheck', () => {
+        var graphTypeSelected = $('.graphicType.active').attr('id');
+        // We draw the default graphic for each section
+        tcsJSON.then(data => {
+            Graphic.chooseGraphicToDraw(data, {
+                "type": graphTypeSelected
             });
         });
     });

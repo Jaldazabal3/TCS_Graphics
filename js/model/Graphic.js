@@ -1,11 +1,5 @@
 var Graphic = (function () {
-
     function chooseGraphicToDraw(geoJSONdata, graphicOptions) {
-        // We destroy the existing graphic if any because it gives problems between c3 and leaflet
-        // if (activeGraphic !== undefined && activeGraphic !== null) {
-        //     console.log(activeGraphic);
-        //     activeGraphic.destroy();
-        // }
         $('#divGraph').empty();
         $('#divGraph').removeClass('c3');
         switch (graphicOptions.type) {
@@ -20,10 +14,11 @@ var Graphic = (function () {
                     $('#breakDownCheck').prop('checked',false);
                     $('#breakDownCheck').prop('disabled',true);
                 } else {
-                    graphicOptions.breakDownScores = document.getElementById('breakDownCheck').checked;
                     $('#breakDownCheck').prop('disabled',false);
+                    graphicOptions.breakDownScores = document.getElementById('breakDownCheck').checked;
                 }
                 RankingGraph.generateGraph(geoJSONdata, graphicOptions);
+                break;
             default:
                 break;
         }

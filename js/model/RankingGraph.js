@@ -40,12 +40,7 @@ var RankingGraph = (function () {
             },
             legend: {
                 show: false
-            },
-            // tooltip: {
-            //     contents: (d, defaultTitleFormat, defaultValueFormat, color) => {
-            //         // console.log(d);
-            //     }
-            // }
+            }
         });
     }
 
@@ -96,10 +91,45 @@ var RankingGraph = (function () {
         const arrayComponents = ['Total (100)','Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'];
         var arrayTCScores = createRankingArray(geoJSONdata, graphicOptions);
         var arrayDataChart = [];                                                    // This will be an bidimensional array. But the next day
-        arrayComponents.forEach(d => {
-
-        })
-        
+        var i = 0;
+        arrayComponents.forEach(component => {
+            if(component !== 'Total (100)') {
+                arrayDataChart.push(arrayTCScores.map(a => parseInt(a[component])));
+                arrayDataChart[i].unshift(component);
+                i++;
+            }
+        });
+        c3.generate({
+            bindto: '#divGraph',
+            data: {
+                columns: [
+                    arrayDataChart[0],
+                    arrayDataChart[1],
+                    arrayDataChart[2],
+                    arrayDataChart[3],
+                    arrayDataChart[4],
+                    arrayDataChart[5]
+                ],
+                type: 'bar',
+                groups: [
+                    [
+                        arrayComponents[1],
+                        arrayComponents[2],
+                        arrayComponents[3],
+                        arrayComponents[4],
+                        arrayComponents[5],
+                        arrayComponents[6]
+                    ]
+                ]
+            },
+            axis: {
+                rotated: true,
+                x: {
+                    type: 'category',
+                    categories: arrayTCScores.map(a => a.country)
+                }
+            }
+        });
     }
 
     return {
