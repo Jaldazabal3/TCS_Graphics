@@ -27,6 +27,8 @@ var Controls = (function () {
 
     function evoGrapghicControls() {
         $('#secondCol').html(chooseTypeEvo());
+        $('#thirdCol').html(chooseCountries());
+        createMultiSelectListener();
     }
 
     function chooseYearSelect() {
@@ -73,10 +75,29 @@ var Controls = (function () {
     }
 
     function chooseCountries() {
-        var $htmlThirdCol
+        var arrayCountries = ArrayCountries.getArrayCountries();
+        var $htmlThirdCol = '<div class="ui sub header">Countries (up to 5)</div>';
+        $htmlThirdCol += '<div name="states" class="ui fluid multiple search selection dropdown" id="multi-select">';
+        $htmlThirdCol += '<input type="hidden" name="country">';
+        $htmlThirdCol += '<i class="dropdown icon"></i>';
+        $htmlThirdCol += '<div class="default text">Select Country</div>';
+        $htmlThirdCol += '<div class="menu">';
+        arrayCountries.forEach(country => {
+            $htmlThirdCol += '<div class="item" data-value="' + country.name + '"><i class="' + country.flag + ' flag"></i>' + country.name + '</div>';
+        });
+        $htmlThirdCol += '</div></div>';
+        // $htmlThirdCol += '</div>';
+        return $htmlThirdCol;
     }
 
     return {
         displayControls: displayControls
     }
 }());
+
+
+function createMultiSelectListener() {
+    $('#multi-select').dropdown({
+        maxSelections: 5
+    });
+}
