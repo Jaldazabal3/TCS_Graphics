@@ -54,6 +54,27 @@ $(function () {
         });
     });
     
+    // Draw graphic if the type of evolution graphic select changes
+    $('#secondCol').on('change','#typeEvolution', () => {
+        var graphTypeSelected = $('.graphicType.active').attr('id');
+        tcsJSON.then(data => {
+            Graphic.chooseGraphicToDraw(data, {
+                "type": graphTypeSelected
+            })
+        })
+    })
+
+    // Draw graphic if there is a change on the third row array of country select
+    $('#thirdCol').on('change','#countryMultiInput', () => {
+        var graphTypeSelected = $('.graphicType.active').attr('id');
+        tcsJSON.then(data => {
+            Graphic.chooseGraphicToDraw(data, {
+                "type": graphTypeSelected
+            });
+        });
+    });
+
+    
 });
 
 

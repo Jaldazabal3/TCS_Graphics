@@ -19,6 +19,11 @@ var Graphic = (function () {
                 }
                 RankingGraph.generateGraph(geoJSONdata, graphicOptions);
                 break;
+            case 'evoGraphic':
+                graphicOptions.component = $('#typeEvolution').children('option:selected').val();
+                graphicOptions.arrayCountries = $('#countryMultiInput').val().split(',');
+                EvolutionGraph.generateEvoGraph(geoJSONdata, graphicOptions);
+                break;
             default:
                 break;
         }

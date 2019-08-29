@@ -32,7 +32,7 @@ var Controls = (function () {
     }
 
     function chooseYearSelect() {
-        const arrayYears = [2016, 2013, 2010, 2007, 2005, 2003]
+        const arrayYears = [2016, 2013, 2010, 2007, 2005, 2003];
         var $htmlSecondCol = '<div class="form-group"><label>Year</label><select class="form-control" id="dataYear">';
         arrayYears.forEach( year => {
             $htmlSecondCol += '<option value="' + year + '">' + year + '</option>';
@@ -78,7 +78,7 @@ var Controls = (function () {
         var arrayCountries = ArrayCountries.getArrayCountries();
         var $htmlThirdCol = '<div class="ui sub header">Countries (up to 5)</div>';
         $htmlThirdCol += '<div name="states" class="ui fluid multiple search selection dropdown" id="multi-select">';
-        $htmlThirdCol += '<input type="hidden" name="country">';
+        $htmlThirdCol += '<input type="hidden" name="country" id="countryMultiInput">';
         $htmlThirdCol += '<i class="dropdown icon"></i>';
         $htmlThirdCol += '<div class="default text">Select Country</div>';
         $htmlThirdCol += '<div class="menu">';
@@ -86,7 +86,6 @@ var Controls = (function () {
             $htmlThirdCol += '<div class="item" data-value="' + country.name + '"><i class="' + country.flag + ' flag"></i>' + country.name + '</div>';
         });
         $htmlThirdCol += '</div></div>';
-        // $htmlThirdCol += '</div>';
         return $htmlThirdCol;
     }
 
