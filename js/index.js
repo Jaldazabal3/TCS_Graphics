@@ -44,7 +44,7 @@ $(function () {
     });
 
     // Draw graphic if the checkbox for breaking down the score is checked or unchecked
-    $('#thirdCol').on('change','#breakDownCheck', () => {
+    $('#thirdCol').on('change','#breakDownCheckRank', () => {
         var graphTypeSelected = $('.graphicType.active').attr('id');
         // We draw the default graphic for each section
         tcsJSON.then(data => {
@@ -62,7 +62,17 @@ $(function () {
                 "type": graphTypeSelected
             })
         })
-    })
+    });
+
+    // Draw graphic if the checkbox for breaking down the score in evolution is checked
+    $('#secondCol').on('change','#breakDownCheckEvo', () => {
+        var graphTypeSelected = $('.graphicType.active').attr('id');
+        tcsJSON.then(data => {
+            Graphic.chooseGraphicToDraw(data, {
+                "type": graphTypeSelected
+            });
+        });
+    });
 
     // Draw graphic if there is a change on the third row array of country select
     $('#thirdCol').on('change','#countryMultiInput', () => {
@@ -73,8 +83,6 @@ $(function () {
             });
         });
     });
-
-    
 });
 
 

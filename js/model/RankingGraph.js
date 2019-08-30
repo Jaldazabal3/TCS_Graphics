@@ -1,7 +1,7 @@
 var RankingGraph = (function () {
 
     function generateGraph(geoJSONdata, graphicOptions) {
-        if (graphicOptions.breakDownScores === true) {
+        if (graphicOptions.breakDownScoresRank === true) {
             createStackedRanking(geoJSONdata, graphicOptions);
         } else {
             createSingleRanking(geoJSONdata, graphicOptions);
@@ -36,6 +36,9 @@ var RankingGraph = (function () {
                 x: {
                     type: 'category',
                     categories: arrayTCScores.map(a => a.country)
+                },
+                y: {
+                    label: graphicOptions.component
                 }
             },
             legend: {
@@ -99,6 +102,9 @@ var RankingGraph = (function () {
                 i++;
             }
         });
+        // Each column is an array which contains the scores for each country of a single component, having the name of the component as the first value.
+        //      For example: ['Price (30)', 20, 30, 22, 23, 4, 5, 16, 20, ...]
+        // The groups are the name of the 
         c3.generate({
             bindto: '#divGraph',
             data: {
