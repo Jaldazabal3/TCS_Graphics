@@ -10,7 +10,7 @@ var MapGraph = (function() {
         $('#divGraph').html('<div id="divMap"></div>');
         $('#divMap').css('width','100%').css('height','100%');
         var europeMap = L.map('divMap').setView([54.5260,15.2551],3);
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
             maxZoom: 5,
             minZoom: 3
@@ -27,7 +27,6 @@ var MapGraph = (function() {
                 style: style,
                 onEachFeature: onEachFeature
         }).addTo(europeMap);
-        
 
         info.onAdd = function(europeMap) {
             // Create a div with class info
@@ -83,19 +82,19 @@ var MapGraph = (function() {
             return {
                 fillColor: getColor(tcsSingleData['Total (100)']),
                 weight: 2,
-                opacity: 1,
+                opacity: 0.7,
                 color: 'white',
                 dashArray: '3',
-                fillOpacity: 0.7
+                fillOpacity: 0.5
             }
         } else{
             return {
                 fillColor: 'white',
                 weight: 2,
-                opacity: 1,
+                opacity: 0.7,
                 color: 'white',
                 dashArray: '3',
-                fillOpacity: 0.7
+                fillOpacity: 0.5
             }
         }
     }
@@ -111,7 +110,7 @@ var MapGraph = (function() {
             weight: 2,
             color: '#666',
             dashArray: '',
-            fillOpacity: 0.7
+            fillOpacity: 0.5
         });
 
         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {

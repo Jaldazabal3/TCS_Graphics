@@ -15,7 +15,7 @@ var Graphic = (function () {
                     $('#breakDownCheckRank').prop('disabled',true);
                 } else {
                     $('#breakDownCheckRank').prop('disabled',false);
-                    graphicOptions.breakDownScoresRank = document.getElementById('breakDownCheck').checked;
+                    graphicOptions.breakDownScoresRank = document.getElementById('breakDownCheckRank').checked;
                 }
                 RankingGraph.generateGraph(geoJSONdata, graphicOptions);
                 break;

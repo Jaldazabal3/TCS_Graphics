@@ -66,7 +66,7 @@ var EvolutionGraph = (function () {
     }
 
     function createOtherEvoGraphic(geoJSONdata, graphicOptions) {
-        //This is an array of objects, which have the country name as key and an array of ranking for each year
+        // This is an array of objects, which have the country name as key and an array of ranking for each year
         var arrayData = getArrayChosenComponenet(geoJSONdata, graphicOptions);
         c3.generate({
             bindto: '#divGraph',
@@ -89,6 +89,7 @@ var EvolutionGraph = (function () {
     function createBrokenDownScoresEvo(geoJSONdata, graphicOptions) {
         // Each position in the array will be an object like: {country: , year: , Price (30): , etc}. We will have countriesSelected * tcsYears number of elements inside the array
         var arrayCountriesScores = createArrayCountriesScores(geoJSONdata, graphicOptions);
+        console.log(arrayCountriesScores);
         c3.generate({
             bindto: '#divGraph',
             data: {
@@ -98,9 +99,9 @@ var EvolutionGraph = (function () {
                     x: 'Year',
                     value: ['Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'],
                 },
-                groups: [
-                    ['Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)']
-                ],
+                // groups: [
+                //     ['Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)']
+                // ],
             },
             axis: {
                 x: {
@@ -138,6 +139,7 @@ var EvolutionGraph = (function () {
     }
 
     return {
-        generateEvoGraph: generateEvoGraph
+        generateEvoGraph: generateEvoGraph,
+        createArrayCountriesScores: createArrayCountriesScores
     }
 }());
