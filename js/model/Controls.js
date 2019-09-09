@@ -50,7 +50,7 @@ var Controls = (function () {
         $htmlThirdCol += '</select></div>';
         $htmlThirdCol += '<div class="form-check">';
         $htmlThirdCol += '<input class="form-check-input" type="checkbox" value="breakdown" id="breakDownCheckRank"/>';
-        $htmlThirdCol += '<label class="form-check-label" for="breakDownCheck">Break down score</label>';
+        $htmlThirdCol += '<label class="form-check-label" for="breakDownCheckRank">Break down score</label>';
         $htmlThirdCol += '</div>';
         return $htmlThirdCol;
     }
@@ -71,10 +71,6 @@ var Controls = (function () {
             $htmlSecondCol += '<option value="' + component + '">' + component + '</option>';
         });
         $htmlSecondCol += '</select></div>';
-        $htmlSecondCol += '<div class="form-check">';
-        $htmlSecondCol += '<input class="form-check-input" type="checkbox" value="breakdown" id="breakDownCheckEvo"/>';
-        $htmlSecondCol += '<label class="form-check-label" for="breakDownCheck">Break down score</label>';
-        $htmlSecondCol += '</div>';
         return $htmlSecondCol;
     }
 
