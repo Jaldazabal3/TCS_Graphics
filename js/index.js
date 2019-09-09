@@ -97,7 +97,9 @@ $(function () {
             arrayCountries: ['Spain','France','Russia']
         };
         var arrayCountriesScores = EvolutionGraph.createArrayCountriesScores(data, graphicOptions);
-        const arrayYears = [2003, 2005, 2007, 2010, 2013, 2016];
+        const arrayYears = ['', 2003,'', 2005,'', 2007,'', 2010,'', 2013,'', 2016];
+
+        console.log(arrayCountriesScores);
         
         //Creating values for margin and size
         const margin = 60;
@@ -118,25 +120,20 @@ $(function () {
         // Creating axis Y
         chart.append('g').call(d3.axisLeft(yScale));
 
+
+
         // Creating axis X with array of years, with padding of 0.2 between values
-        const xScale = d3.scaleBand()
+        const xScale = d3.scalePoint()
         .range([0, width])
-        .domain(arrayYears)
-        .padding(0.2);
+        .domain(arrayYears);
 
         // Positioning the axis on the bottom of the chart (minus the margin)
         chart.append('g')
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale));
         
+        // console.log(axis);
         
-
-        
-
-
     });
 
 });
-
-
-
