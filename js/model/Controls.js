@@ -32,7 +32,7 @@ var Controls = (function () {
     }
 
     function chooseYearSelect() {
-        const arrayYears = [2016, 2013, 2010, 2007, 2005, 2003];
+        const arrayYears = [2019, 2016, 2013, 2010, 2007, 2005, 2003];
         var $htmlSecondCol = '<div class="form-group"><label>Year</label><select class="form-control" id="dataYear">';
         arrayYears.forEach( year => {
             $htmlSecondCol += '<option value="' + year + '">' + year + '</option>';
@@ -43,7 +43,7 @@ var Controls = (function () {
 
     function scoreTypesAndBreakDown() {
         const arrayComponents = ['Total (100)','Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'];
-        var $htmlThirdCol = '<div class="form-group"><label>Component</label><select class="form-control" id="rankComponent">';
+        let $htmlThirdCol = '<div class="form-group"><label>Component</label><select class="form-control" id="rankComponent">';
         arrayComponents.forEach( component => {
             $htmlThirdCol += '<option value="' + component + '">' + component + '</option>';
         });
@@ -66,7 +66,7 @@ var Controls = (function () {
             'Health warnings (10)',
             'Treatment (10)'
         ];
-        var $htmlSecondCol = '<div class="form-group"><label>Type</label><select class="form-control" id="typeEvolution">';
+        let $htmlSecondCol = '<div class="form-group"><label>Type</label><select class="form-control" id="typeEvolution">';
         arrayComponents.forEach(component => {
             $htmlSecondCol += '<option value="' + component + '">' + component + '</option>';
         });
@@ -75,8 +75,8 @@ var Controls = (function () {
     }
 
     function chooseCountries() {
-        var arrayCountries = ArrayCountries.getArrayCountries();
-        var $htmlThirdCol = '<div class="ui sub header">Countries (up to 5)</div>';
+        let arrayCountries = ArrayCountries.getArrayCountries();
+        let $htmlThirdCol = '<div class="ui sub header">Countries (up to 5)</div>';
         $htmlThirdCol += '<div name="states" class="ui fluid multiple search selection dropdown" id="multi-select">';
         $htmlThirdCol += '<input type="hidden" name="country" id="countryMultiInput">';
         $htmlThirdCol += '<i class="dropdown icon"></i>';
