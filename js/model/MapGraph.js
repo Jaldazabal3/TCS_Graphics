@@ -39,9 +39,32 @@ var MapGraph = (function() {
         info.update = function(props) {
             var divContent = '<h4>TCS Score</h4>';
             if (props) {
-                var currentTCS = props.tcs.filter(d => d.Year === yearTCS);
+                const currentTCS = props.tcs.filter(d => d.Year === yearTCS);
+                console.log(currentTCS);
                 if (currentTCS[0] !== undefined) {
-                    const arrayComponents = ['Total (100)', 'Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'];
+                    let arrayComponents = [];
+                    if(graphicOptions.year === '2019') {
+                        arrayComponents = [
+                            'Total (100)', 'Price (30)',
+                            'Public place bans (22)',
+                            'Public info campaign spending (10)',
+                            'Advertising bans (13)',
+                            'Health warnings (10)',
+                            'Treatment (10)',
+                            'Illicit trade (3)',
+                            'Art 5.3 FCTC (2)'
+                        ];
+                    } else {
+                        arrayComponents = [
+                            'Total (100)',
+                            'Price (30)',
+                            'Public place bans (22)',
+                            'Public info campaign spending (15)',
+                            'Advertising bans (13)',
+                            'Health warnings (10)',
+                            'Treatment (10)'
+                        ];
+                    }
                     divContent += '<b>' + props.name + '</b><br/>';
                     arrayComponents.forEach(component => {
                         divContent += '<span class="score-name">' + component + ': </span><span class="score-value">' + currentTCS[0][component] + '</span><br/>';

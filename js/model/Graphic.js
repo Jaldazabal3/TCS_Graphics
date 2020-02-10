@@ -1,10 +1,11 @@
 var Graphic = (function () {
-    function chooseGraphicToDraw(geoJSONdata, graphicOptions) {
+    async function chooseGraphicToDraw(graphicOptions) {
         $('#divGraph').empty();
         $('#divGraph').removeClass('c3');
         switch (graphicOptions.type) {
             case 'mapGraphic':
                 graphicOptions.year = $('#dataYear').children('option:selected').val();
+                const geoJSONdata = await dataAccess(graphicOptions);
                 MapGraph.generateMap(geoJSONdata, graphicOptions);
                 break;
             case 'rankGraphic':
@@ -26,6 +27,14 @@ var Graphic = (function () {
                 break;
             default:
                 break;
+        }
+    }
+
+    async function dataAccess(graphicOptions) {
+        if(graphicOptions.type === 'mapGraphic' || graphicOptions.type === 'rankGraphic') {
+            return DataAccess.singleYearGeoJSON(graphicOptions.year);
+        } else {
+            return DataAccess.readAllData();
         }
     }
 
