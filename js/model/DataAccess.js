@@ -57,17 +57,17 @@ var DataAccess = (function() {
                             return d.Country === feature.properties.name;
                         }).forEach(element => {
                             singleCountryTCS.push({
-                                "Year": element['Year'],
-                                "Ranking": element['Ranking'],
-                                "Price (30)": element['Price (30)'],
-                                "Public place bans (22)": element['Public place bans (22)'],
-                                "Public info campaign spending (10)": element['Public info campaign spending (10)'],
-                                "Advertising bans (13)": element['Advertising bans (13)'],
-                                "Health warnings (10)": element['Health warnings (10)'],
-                                "Treatment (10)": element['Treatment (10)'],
-                                "Illicit trade (3)": element["Illicit trade (3)"],
+                                "Year": element['Year'] === '' ? 0 : element['Year'],
+                                "Ranking": element['Ranking'] === '' ? 0 : element['Ranking'],
+                                "Price (30)": element['Price (30)'] === '' ? 0 : element['Price (30)'],
+                                "Public place bans (22)": element['Public place bans (22)'] === '' ? 0 : element['Public place bans (22)'],
+                                "Public info campaign spending (10)": element['Public info campaign spending (10)'] === '' ? 0 : element['Public info campaign spending (10)'],
+                                "Advertising bans (13)": element['Advertising bans (13)'] === '' ? 0 : element['Advertising bans (13)'],
+                                "Health warnings (10)": element['Health warnings (10)'] === '' ? 0 : element['Advertising bans (13)'],
+                                "Treatment (10)": element['Treatment (10)'] === '' ? 0 : element['Treatment (10)'],
+                                "Illicit trade (3)": element["Illicit trade (3)"] === '' ? 0 : element["Illicit trade (3)"],
                                 "Art 5.3 FCTC (2)": element['Art 5.3 FCTC (2)'] === '' ? 0 : element['Art 5.3 FCTC (2)'],
-                                "Total (100)": element['Total (100)']
+                                "Total (100)": element['Total (100)'] === '' ? 0 :element['Total (100)']
                             });
                         });
                     feature.properties.tcs = singleCountryTCS;
