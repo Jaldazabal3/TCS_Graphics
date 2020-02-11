@@ -40,7 +40,6 @@ var MapGraph = (function() {
             var divContent = '<h4>TCS Score</h4>';
             if (props) {
                 const currentTCS = props.tcs.filter(d => d.Year === yearTCS);
-                console.log(currentTCS);
                 if (currentTCS[0] !== undefined) {
                     let arrayComponents = [];
                     if(graphicOptions.year === '2019') {
