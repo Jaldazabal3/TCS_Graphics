@@ -20,8 +20,7 @@ var Graphic = (function () {
                     $('#breakDownCheckRank').prop('disabled',false);
                     graphicOptions.breakDownScoresRank = document.getElementById('breakDownCheckRank').checked;
                 }
-                console.log(graphicOptions);
-                RankingGraph.generateGraph(graphicOptions);
+                RankingGraph.generateGraph(geoJSONdata, graphicOptions);
                 break;
             case 'evoGraphic':
                 geoJSONdata = await dataAccess(graphicOptions);

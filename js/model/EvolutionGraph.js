@@ -1,5 +1,5 @@
 var EvolutionGraph = (function () {
-    const arrayYears = [2003, 2005, 2007, 2010, 2013, 2016];
+    const arrayYears = [2003, 2005, 2007, 2010, 2013, 2016, 2019];
 
     function generateEvoGraph(geoJSONdata, graphicOptions) {
         switch (graphicOptions.component) {

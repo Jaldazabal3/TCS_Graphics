@@ -42,7 +42,30 @@ var Controls = (function () {
     }
 
     function scoreTypesAndBreakDown() {
-        const arrayComponents = ['Total (100)','Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'];
+        const yearSelected = $('#dataYear').children('option:selected').val();
+        let arrayComponents = [];
+        if(yearSelected === '2019') {
+            arrayComponents = [
+                'Total (100)',
+                'Price (30)',
+                'Public place bans (22)',
+                'Public info campaign spending (10)',
+                'Advertising bans (13)',
+                'Health warnings (10)',
+                'Treatment (10)',
+                'Illicit trade (3)',
+                'Art 5.3 FCTC (2)'
+            ];
+        } else {
+            arrayComponents = [
+                'Total (100)',
+                'Price (30)',
+                'Public place bans (22)',
+                'Public info campaign spending (15)',
+                'Advertising bans (13)', 'Health warnings (10)',
+                'Treatment (10)'
+            ];
+        }
         let $htmlThirdCol = '<div class="form-group"><label>Component</label><select class="form-control" id="rankComponent">';
         arrayComponents.forEach( component => {
             $htmlThirdCol += '<option value="' + component + '">' + component + '</option>';
@@ -61,7 +84,7 @@ var Controls = (function () {
             'Total (100)',
             'Price (30)',
             'Public place bans (22)',
-            'Public info campaign spending (15)',
+            'Public info campaign spending, Illicit trade and Art. 5.3 FCTC (15)',
             'Advertising bans (13)',
             'Health warnings (10)',
             'Treatment (10)'

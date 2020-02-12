@@ -5,7 +5,7 @@ var DataAccess = (function() {
         // add data of TCS to geojson variable
         return Promise
         .all([
-            d3.dsv(';','dades_paisos_all.csv'),
+            d3.dsv(';','data/tcs_score.csv'),
             d3.json('world.geojson')
         ]).then(([tcsData, geoJSONdata]) => {
             //We get a geoJSON object containing only the countries in TCS

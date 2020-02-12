@@ -103,7 +103,7 @@ var RankingGraph = (function () {
             }
         });
         // Each column is an array which contains the scores for each country of a single component, having the name of the component as the first value.
-        //      For example: ['Price (30)', 20, 30, 22, 23, 4, 5, 16, 20, ...]
+        //  For example: ['Price (30)', 20, 30, 22, 23, 4, 5, 16, 20, ...]
         // The groups are the name of the 
         c3.generate({
             bindto: '#divGraph',
