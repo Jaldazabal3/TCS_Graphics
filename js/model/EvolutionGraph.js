@@ -1,5 +1,5 @@
 var EvolutionGraph = (function () {
-    const arrayYears = [2003, 2005, 2007, 2010, 2013, 2016];
+    const arrayYears = [2003, 2005, 2007, 2010, 2013, 2016, 2019];
 
     function generateEvoGraph(geoJSONdata, graphicOptions) {
         switch (graphicOptions.component) {
@@ -96,10 +96,10 @@ var EvolutionGraph = (function () {
                 type: 'bar',
                 keys: {
                     x: 'Year',
-                    value: ['Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'],
+                    value: ['Price (30)', 'Public place bans (22)', 'Public info campaign spending, Illicit trade and Art. 5.3 FCTC (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)'],
                 },
                 groups: [
-                    ['Price (30)', 'Public place bans (22)', 'Public info campaign spending (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)']
+                    ['Price (30)', 'Public place bans (22)', 'Public info campaign spending, Illicit trade and Art. 5.3 FCTC (15)', 'Advertising bans (13)', 'Health warnings (10)', 'Treatment (10)']
                 ],
             },
             axis: {
@@ -126,7 +126,7 @@ var EvolutionGraph = (function () {
                         "Year": singleTCS['Year'],
                         "Price (30)": singleTCS['Price (30)'],
                         "Public place bans (22)": singleTCS['Public place bans (22)'],
-                        "Public info campaign spending (15)": singleTCS['Public info campaign spending (15)'],
+                        "Public info campaign spending, Illicit trade and Art. 5.3 FCTC (15)": singleTCS['Public info campaign spending, Illicit trade and Art. 5.3 FCTC (15)'],
                         "Advertising bans (13)": singleTCS['Advertising bans (13)'],
                         "Health warnings (10)": singleTCS['Health warnings (10)'],
                         "Treatment (10)": singleTCS['Treatment (10)'],

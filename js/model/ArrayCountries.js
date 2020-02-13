@@ -16,6 +16,7 @@ var ArrayCountries = (function () {
             { name: 'Hungary', flag: 'hu' },
             { name: 'Iceland', flag: 'is' },
             { name: 'Ireland', flag: 'ie' },
+            { name: 'Israel', flag: 'il' },
             { name: 'Italy', flag: 'it' },
             { name: 'Latvia', flag: 'lv' },
             { name: 'Lithuania', flag: 'lt' },
