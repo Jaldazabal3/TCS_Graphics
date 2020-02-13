@@ -21,6 +21,8 @@ $(function () {
     // Draw graphic if there is a change on the second row year select
     $('#secondCol').on('change','#dataYear',  () => {
         var graphTypeSelected = $('.graphicType.active').attr('id');
+        // We redraw the third row in case of changing year
+        Controls.redrawThirdColComponent(graphTypeSelected);
         // We draw the default graphic for each section
         Graphic.chooseGraphicToDraw({
             "type": graphTypeSelected

@@ -25,6 +25,12 @@ var Controls = (function () {
         $('#thirdCol').html(scoreTypesAndBreakDown());
     }
 
+    function redrawThirdColComponent(graphicSelected) {
+        if(graphicSelected === 'rankGraphic') {
+            $('#thirdCol').html(scoreTypesAndBreakDown());
+        }
+    }
+
     function evoGrapghicControls() {
         $('#secondCol').html(chooseTypeEvoAndBreakDown());
         $('#thirdCol').html(chooseCountries());
@@ -113,7 +119,8 @@ var Controls = (function () {
     }
 
     return {
-        displayControls: displayControls
+        displayControls: displayControls,
+        redrawThirdColComponent: redrawThirdColComponent
     }
 }());
 
