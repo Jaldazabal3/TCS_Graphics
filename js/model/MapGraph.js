@@ -81,12 +81,14 @@ var MapGraph = (function() {
         info.addTo(europeMap);
 
         legend.onAdd = function (europeMap) {
-            var divLegend = L.DomUtil.create('div','info legend');
-            var grades = [0,50,100];
-            var labels = [];
-            for (var i = 0; i < grades.length - 1 ; i++) {
-                divLegend.innerHTML += '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                    grades[i] + '&ndash;' + grades[i + 1] + '<br>';
+            let divLegend = L.DomUtil.create('div','info legend');
+            let grades = [
+                [0,49],
+                [50,100]
+            ];
+            for (let i = 0; i < grades.length ; i++) {
+                divLegend.innerHTML += '<i style="background:' + getColor(grades[i][0]) + '"></i> ' +
+                grades[i][0] + ' &ndash; ' + grades[i][1] + '<br>';
             }
             return divLegend;
         }
